@@ -85,8 +85,11 @@ gulp.task('watch-scss', ['browser-sync'], function () {
 gulp.task('sass', function () {
     gulp.src('./sass/*.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass())
+        .pipe(sourcemaps.write(undefined, { sourceRoot: null }))
         .pipe(gulp.dest('./css'));
+        //.pipe(reload({stream: true}));
 });
 
 // Run: 
@@ -108,8 +111,8 @@ gulp.task('cssnano', ['cleancss'], function(){
     .pipe(rename({suffix: '.min'}))
     .pipe(cssnano({discardComments: {removeAll: true}}))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./css/'))
-    .pipe(reload({stream: true}));
+    .pipe(gulp.dest('./css/'));
+    //.pipe(reload({stream: true}));
 }); 
 
 gulp.task('cleancss', function() {
@@ -137,6 +140,11 @@ gulp.task('scripts', function() {
   gulp.src([
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
+
+      basePaths.dev + 'js/jquery.waypoints.js',
+      basePaths.dev + 'js/inview.js',
+      basePaths.dev + 'js/sticky.js',
+      basePaths.dev + 'js/slick.min.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js', 
@@ -218,6 +226,18 @@ gulp.task('copy-assets', function() {
 // Copy Tether CSS files
     gulp.src(basePaths.node + 'tether/dist/css/*.css')
         .pipe(gulp.dest(basePaths.dev + '/css'));
+
+    gulp.src(basePaths.node + 'waypoints/lib/jquery.waypoints.js')
+        .pipe(gulp.dest(basePaths.dev + '/js'));
+
+    gulp.src(basePaths.node + 'waypoints/lib/shortcuts/inview.js')
+        .pipe(gulp.dest(basePaths.dev + '/js'));
+
+    gulp.src(basePaths.node + 'waypoints/lib/shortcuts/sticky.js')
+        .pipe(gulp.dest(basePaths.dev + '/js'));
+
+    gulp.src(basePaths.bower + 'slick-carousel/slick/slick.min.js')
+        .pipe(gulp.dest(basePaths.dev + '/js'));
 });
 
 // Run 

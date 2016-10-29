@@ -78,6 +78,7 @@ Rails
 
 # Ignore WordPress files.
 ##########
+wp-config.php
 /wordpress
 /wp/wp-load.php
 /wp/wp-comments-post.php

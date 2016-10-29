@@ -1,6 +1,6 @@
 // Some basic padding for all wrappers
 .wrapper {
-  padding:$grid-gutter-width 0;
+
 }
 
 // Reset hero wrapper padding to 0
@@ -160,8 +160,8 @@ right: 0px;
 }
 
 .nav-link {
-  margin-left:.425rem;
-  margin-right:.425rem;
+  padding-left: rem(10);
+  padding-right: rem(10);
 }
 
 // Fixing BS dropdown in a dropdown

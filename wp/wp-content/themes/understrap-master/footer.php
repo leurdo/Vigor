@@ -8,28 +8,42 @@
  */
 ?>
 
-<?php get_sidebar('footerfull'); ?>
-
-<div class="wrapper" id="wrapper-footer">
+<div class="footer" id="wrapper-footer">
     
     <div class="container">
 
         <div class="row">
 
-            <div class="col-md-12">
-    
-                <footer id="colophon" class="site-footer" role="contentinfo">
-
-                    <div class="site-info">
-                        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'understrap' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'understrap' ), 'WordPress' ); ?></a>
-                        <span class="sep"> | </span>
-                        <?php printf( __( 'Theme: %1$s by %2$s.', 'understrap' ), 'understrap', '<a href="http://understrap.com/" rel="designer">understrap.com</a>' ); ?> 
-                        (<?php printf( __( 'Version', 'understrap' ) ); ?>: 0.4.7)
-                    </div><!-- .site-info -->
-
-                </footer><!-- #colophon -->
-
-            </div><!--col end -->
+            <div class="col-md-3 footer-col">
+                <div class="row">
+                    <div class="col-sm-5 col-xs-6 col-md-12 footer-col-title">
+                        <h3>Адрес</h3>
+                    </div>
+                    <div class="col-sm-7 col-xs-6 col-md-12">
+                        <p><?php the_field('address', 2); ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 footer-col">
+                <div class="row">
+                    <div class="col-sm-5 col-xs-6 col-md-12 footer-col-title">
+                    <h3>Телефон</h3>
+                    </div>
+                    <div class="col-sm-7 col-xs-6 col-md-12">
+                    <p><a href="tel:<?php the_field('tel', 2); ?>"><?php the_field('tel', 2); ?></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 footer-col">
+                <div class="row">
+                    <div class="col-sm-5 col-xs-6 col-md-12 footer-col-title">
+                    <h3>Почта</h3>
+                    </div>
+                    <div class="col-sm-7 col-xs-6 col-md-12">
+                    <p><?php the_field('mail', 2); ?></p>
+                    </div>
+                </div>
+            </div>
 
         </div><!-- row end -->
         
@@ -40,6 +54,12 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function(){ var widget_id = '8NCEnGtkxZ';var d=document;var w=window;function l(){
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
 
 </body>
 

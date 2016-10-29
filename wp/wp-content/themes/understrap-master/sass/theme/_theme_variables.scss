@@ -5,9 +5,31 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
+$enable-flex:         true;
+
+$font-family-base:    Roboto;
+$font-size-base:      0.875rem;
+
+
 $brand-primary:         #895cd1; //#ff6d5a
+$menu-text:             #878787;
+$body-color:            #000;
+$yellow:                #ffed00;
+$button:                #fff677;
+$gray-bg:               #ebebeb;
+$green-bg:              #63bb0d;
+$gray-modal:            #e6e6e6;
+$gray-table:            #1d1d1b;
+$green-modal:           #62bc0f;
+$gray-nav:              #a0a0a0;
+$yellow-bg:             #fffbcb;
 
 // Basics of a navbar
 $navbar-height:                    60px;
 $navbar-margin-bottom:             0px;
 $navbar-border-radius:             0px;
+
+@function rem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}
