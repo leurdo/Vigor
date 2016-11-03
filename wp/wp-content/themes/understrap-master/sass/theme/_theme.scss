@@ -55,6 +55,7 @@ a, a:hover {
 
     a {
       text-transform: uppercase;
+      text-align: center;
       font-size: rem(12);
       font-weight: 500;
       color: $menu-text;
@@ -65,6 +66,8 @@ a, a:hover {
 
       @include media-breakpoint-down(md) {
         font-size: rem(12);
+        text-align: right;
+        padding-right: 40px;
       }
 
       @include media-breakpoint-up(lg) {
@@ -95,12 +98,27 @@ a, a:hover {
 .navbar-header {
   display: inline-block;
   float: left;
-  margin: rem(25) 0;
+  margin: rem(35) 0;
 
   @include media-breakpoint-down(md) {
     display: block;
     width: 100%;
     float: none;
+    text-align: center;
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    .navbar-tel {
+      float: left;
+      margin-left: 0;
+      text-align: left;
+
+      p {
+        font-size: 12px;
+      }
+    }
   }
 }
 
@@ -110,6 +128,16 @@ a, a:hover {
   width: 30px;
   height: 4px;
   border-radius: 1px;
+}
+
+.navbar-tel {
+  float: right;
+  margin-left: 20px;
+
+  p {
+    margin-bottom: 0;
+    color: $menu-text;
+  }
 }
 
 
@@ -868,10 +896,19 @@ a, a:hover {
 // Works block
 .works {
   padding-top: rem(100);
-  text-align: center;
 
   @include media-breakpoint-down(sm) {
     padding-top: rem(35);
+  }
+
+  .work-tabs {
+    text-align: center;
+
+  }
+
+  &-tab-pane-block-wrapper {
+    overflow: hidden;
+    margin-bottom: 30px;
   }
 
   &-tab-pane-block {
@@ -879,9 +916,10 @@ a, a:hover {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    margin-bottom: 30px;
     cursor: pointer;
     position: relative;
+    transform: scale(1);
+    transition: all 0.5s ease-out;
     
     .overlay {
       position: absolute;
@@ -904,9 +942,17 @@ a, a:hover {
       }
     }
 
-    &:hover .overlay {
-      display: block;
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.5s ease-out;
+
+      .overlay {
+        display: block;
+      }
     }
+
+
+
   }
 
   &-tabs {
@@ -941,6 +987,20 @@ a, a:hover {
     }
   }
 
+  a  {
+    &:hover {
+      text-decoration: none;
+      //color: $button;
+    }
+  }
+
+  .works-tab-pane-more {
+    color: $green-bg;
+  }
+
+  .works-tab-col {
+    padding-bottom: 20px;
+  }
 
 }
 
@@ -1568,6 +1628,307 @@ a, a:hover {
       @include media-breakpoint-down(sm) {
         text-align: right;
       }
+    }
+  }
+
+  .footer-nav {
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  #footer-menu {
+    li {
+      display: inline-block;
+      float: none;
+    }
+    a {
+      color: $menu-text;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.inner-page {
+  &-header {
+    padding-top: 27px;
+    padding-bottom: 20px;
+    border-top: 2px solid $gray-bg;
+    border-bottom: 2px solid $gray-bg;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: rem(24);
+      color: $menu-text;
+    }
+  }
+
+  h2 {
+    letter-spacing: 0;
+    font-size: rem(34);
+    text-transform: none;
+    margin-bottom: 20px;
+  }
+}
+
+.contacts-main {
+  margin-top: 30px;
+
+  p {
+    color: $menu-text;
+  }
+
+  .wpcf7 form .wpcf7-form-control-wrap {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  .wpcf7 form input[type="text"], .wpcf7 form input[type="email"], .wpcf7 form input[type="tel"], .wpcf7 form textarea {
+    width: 100%;
+    padding: 15px 10px;
+    line-height: 27px;
+    border: 1px solid #c8c8ca;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+  }
+
+  .form-submit {
+
+    button {
+      background: $button;
+      color: #000;
+      padding: 16px 28px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      display: inline-block;
+    }
+  }
+}
+
+// Carousel centering fix
+.carousel-inner>.carousel-item {
+  text-align: center;
+}
+
+.carousel-inner>.carousel-item>img {
+  display: inline-block;
+}
+
+// Google maps settings
+.acf-map {
+  width: 100%;
+  height: 400px;
+  border: #ccc solid 1px;
+  margin-bottom: 40px;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+  max-width: inherit !important;
+}
+
+// Portfolio page overrides
+
+.portfolio-wrapper {
+  .works {
+    padding-top: 0;
+  }
+
+  .works-pills {
+
+
+    .nav-item {
+
+      a {
+        background: $gray-nav;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: #fff;
+        margin-bottom: 20px;
+
+        &:hover {
+          background: $green-bg;
+        }
+      }
+
+      .active {
+        background: $green-bg;
+      }
+    }
+
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+}
+
+.single-work {
+  .work-modal-block {
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(20);
+      padding-bottom: rem(20);
+    }
+  }
+
+  .work-modal-gallery {
+    background: $gray-modal;
+  }
+
+  h3 {
+    color: $green-modal;
+  }
+
+  .works-modal-textblock {
+    border-top: 1px dashed #000;
+
+    h5 {
+      font-size: rem(14);
+      font-weight: 300;
+      line-height: 1.57;
+      text-transform: uppercase;
+      margin-top: 15px;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: rem(14);
+      font-weight: 300;
+      line-height: 1.57;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #000;
+    }
+  }
+
+}
+
+.contact-form {
+
+  &-title {
+    font-size: rem(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &-divider {
+    height: 19px;
+    background-color: $green-bg;
+    background-image: url(../img/green_triangle_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  input[type="checkbox"] + .wpcf7-list-item-label {
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:not(checked) {
+    position: absolute;
+    opacity: 0;
+  }
+  input[type="checkbox"]:not(checked) + .wpcf7-list-item-label {
+    position: relative;
+    padding: 4px 0 0 30px;
+  }
+
+  input[type="checkbox"]:not(checked) + .wpcf7-list-item-label:before,
+  input[type="checkbox"]:checked + .wpcf7-list-item-label:before
+  {
+    content: '';
+    position: absolute;
+    left:0; top: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #b5b5b5;
+    border-radius: 1px 2px 2px 1px;
+    box-shadow: inset 2.1px 2.1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  input[type="checkbox"]:checked + .wpcf7-list-item-label:before {
+    background: $green-bg;
+  }
+
+
+  .wpcf7-list-item-label {
+    line-height: 20px;
+  }
+
+  .wpcf7-list-item {
+    display: block;
+    margin-bottom: 20px;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 5px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .form-group {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  .form-bordered {
+    border-bottom: 1px dashed $green-bg;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    @include media-breakpoint-down(sm) {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
+
+  label {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+  }
+
+  .wpcf7-checkbox label {
+    font-weight: 300;
+  }
+
+  .form-button {
+    padding: 16px 28px;
+    background: $green-bg;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid #b5b5b5;
+
+    @include media-breakpoint-down(sm) {
+      padding: 13px 23px;
+    }
+  }
+
+  .form-submit {
+    margin-top: 40px;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      margin-top: 30px;
     }
   }
 }

@@ -46,6 +46,7 @@ function understrap_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'understrap' ),
+        'footer' => __( 'Footer Menu', 'understrap' ),
 	) );
 
 	/*
@@ -61,7 +62,7 @@ function understrap_setup() {
 	 */
     add_theme_support( "post-thumbnails" );
 
-    add_image_size( 'slide', 640, 480, true );
+    add_image_size( 'slide', 640, 480, false );
 
 
 	// Set up the WordPress core custom background feature.
@@ -102,12 +103,12 @@ add_filter('wp_trim_excerpt', 'all_excerpts_get_more_link');
 function works_init() {
     register_post_type( 'work', array(
         'labels'            => array(
-            'name'                => __( 'Работы', '' ),
-            'singular_name'       => __( 'Работа', '' ),
-            'all_items'           => __( 'Все работы', '' ),
-            'new_item'            => __( 'Новая работа', '' ),
+            'name'                => __( 'Объекты', '' ),
+            'singular_name'       => __( 'Объект', '' ),
+            'all_items'           => __( 'Все объекты', '' ),
+            'new_item'            => __( 'Новый объект', '' ),
             'add_new'             => __( 'Добавить', '' ),
-            'add_new_item'        => __( 'Добавить работу', '' ),
+            'add_new_item'        => __( 'Добавить объект', '' ),
             'edit_item'           => __( 'Edit', '' ),
             'view_item'           => __( 'View', '' ),
             'search_items'        => __( 'Search', '' ),
@@ -141,9 +142,9 @@ add_action( 'init', 'works_init' );
 function works_cats_init() {
 
     $labels = array(
-        'name'                       => 'Категории работ',
-        'singular_name'              => 'Категория работ',
-        'menu_name'                  => 'Категории работ',
+        'name'                       => 'Категории объектов',
+        'singular_name'              => 'Категория объектов',
+        'menu_name'                  => 'Категории объектов',
         'all_items'                  => 'All Items',
         'parent_item'                => 'Parent Item',
         'parent_item_colon'          => 'Parent Item:',
@@ -170,8 +171,11 @@ function works_cats_init() {
         'show_admin_column'          => true,
         'show_in_nav_menus'          => true,
         'show_tagcloud'              => true,
+        'query_var' => 'works_cats',
+        'rewrite'                    => true
     );
     register_taxonomy( 'works_cats', array( 'work' ), $args );
 
 }
 add_action( 'init', 'works_cats_init', 0 );
+

@@ -72,3 +72,4 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load ACF fields.
  */
 require get_template_directory() . '/inc/acf-functions.php';
+

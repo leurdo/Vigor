@@ -409,9 +409,11 @@ get_header(); ?>
                             ?>
 
                                 <div class="col-md-4">
-                                    <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($default, 'large'); ?>);">
-                                        <div class="overlay" data-id="<?php echo $default; ?>">
-                                            <button data-id="<?php echo $default; ?>" class="btn overlay-more">Подробнее</button>
+                                    <div class="works-tab-pane-block-wrapper">
+                                        <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($default, 'large'); ?>);">
+                                            <div class="overlay tab-overlay" data-id="<?php echo $default; ?>">
+                                                <button data-id="<?php echo $default; ?>" class="btn overlay-more">Подробнее</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -427,9 +429,11 @@ get_header(); ?>
                             ?>
 
                             <div class="col-md-4">
-                                <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($under_200_1, 'large'); ?>);">
-                                    <div class="overlay" data-id="<?php echo $under_200_1; ?>">
-                                        <button data-id="<?php echo $under_200_1; ?>" class="btn overlay-more">Подробнее</button>
+                                <div class="works-tab-pane-block-wrapper">
+                                    <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($under_200_1, 'large'); ?>);">
+                                        <div class="overlay tab-overlay" data-id="<?php echo $under_200_1; ?>">
+                                            <button data-id="<?php echo $under_200_1; ?>" class="btn overlay-more">Подробнее</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -445,9 +449,11 @@ get_header(); ?>
                             ?>
 
                             <div class="col-md-4">
-                                <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($over_200_1, 'large'); ?>);">
-                                    <div class="overlay" data-id="<?php echo $over_200_1; ?>">
-                                        <button data-id="<?php echo $over_200_1; ?>" class="btn overlay-more">Подробнее</button>
+                                <div class="works-tab-pane-block-wrapper">
+                                    <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($over_200_1, 'large'); ?>);">
+                                        <div class="overlay tab-overlay" data-id="<?php echo $over_200_1; ?>">
+                                            <button data-id="<?php echo $over_200_1; ?>" class="btn overlay-more">Подробнее</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -463,9 +469,11 @@ get_header(); ?>
                             ?>
 
                             <div class="col-md-4">
-                                <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($other_1, 'large'); ?>);">
-                                    <div class="overlay" data-id="<?php echo $other_1; ?>">
-                                        <button data-id="<?php echo $other_1; ?>" class="btn overlay-more">Подробнее</button>
+                                <div class="works-tab-pane-block-wrapper">
+                                    <div class="works-tab-pane-block" style="background-image: url(<?php echo get_the_post_thumbnail_url($other_1, 'large'); ?>);">
+                                        <div class="overlay tab-overlay" data-id="<?php echo $other_1; ?>">
+                                            <button data-id="<?php echo $other_1; ?>" class="btn overlay-more">Подробнее</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

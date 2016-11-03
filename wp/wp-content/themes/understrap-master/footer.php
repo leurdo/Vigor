@@ -11,6 +11,21 @@
 <div class="footer" id="wrapper-footer">
     
     <div class="container">
+        <div class="row">
+            <div class="col-md-12 footer-nav">
+                <?php wp_nav_menu(
+                    array(
+                        'theme_location' => 'footer',
+                        'container_class' => '',
+                        'menu_class' => 'nav navbar-nav',
+                        'fallback_cb' => '',
+                        'menu_id' => 'footer-menu',
+                        'walker' => new wp_bootstrap_navwalker()
+                    )
+                ); ?>
+
+            </div>
+        </div>
 
         <div class="row">
 
